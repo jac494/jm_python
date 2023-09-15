@@ -66,3 +66,28 @@ nothing added to commit but untracked files present (use "git add" to track)
 [  7:22PM ]  [ jac494@hp-laptop:~/Projects/jm_python(main✔) ]
  $
 ```
+
+Testing the examples in `first.py` with doctest in Python repl:
+
+```txt
+[  7:27PM ]  [ jac494@hp-laptop:~/Projects/jm_python(main✗) ]
+ $ python3
+Python 3.11.4 (main, Jun  7 2023, 00:00:00) [GCC 12.3.1 20230508 (Red Hat 12.3.1-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import doctest
+>>> import first
+>>> doctest.testmod(first)
+**********************************************************************
+File "/home/jac494/Projects/jm_python/first.py", line 3, in first.store_to_ip
+Failed example:
+    store_to_ip("1234")
+Expected:
+    '11.12.34.0'
+Got nothing
+**********************************************************************
+1 items had failures:
+   1 of   1 in first.store_to_ip
+***Test Failed*** 1 failures.
+TestResults(failed=1, attempted=1)
+>>>
+```
