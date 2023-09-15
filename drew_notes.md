@@ -69,8 +69,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 Testing the examples in `first.py` with doctest in Python repl:
 
-```txt
-[  7:27PM ]  [ jac494@hp-laptop:~/Projects/jm_python(main✗) ]
+```sh
+[  7:47PM ]  [ jac494@hp-laptop:~/Projects/jm_python(main✗) ]
  $ python3
 Python 3.11.4 (main, Jun  7 2023, 00:00:00) [GCC 12.3.1 20230508 (Red Hat 12.3.1-1)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -78,16 +78,37 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import first
 >>> doctest.testmod(first)
 **********************************************************************
-File "/home/jac494/Projects/jm_python/first.py", line 3, in first.store_to_ip
+File "/home/jac494/Projects/jm_python/first.py", line 21, in first.ip_to_site
 Failed example:
-    store_to_ip("1234")
+    ip_to_site("11.12.34.0")
 Expected:
-    '11.12.34.0'
+    '1234'
 Got nothing
 **********************************************************************
-1 items had failures:
-   1 of   1 in first.store_to_ip
-***Test Failed*** 1 failures.
-TestResults(failed=1, attempted=1)
+File "/home/jac494/Projects/jm_python/first.py", line 3, in first.site_to_ip
+Failed example:
+    site_to_ip("1234")
+Expected:
+    '11.12.34.0'
+Got:
+    '11...0'
+**********************************************************************
+2 items had failures:
+   1 of   1 in first.ip_to_site
+   1 of   1 in first.site_to_ip
+***Test Failed*** 2 failures.
+TestResults(failed=2, attempted=2)
 >>>
+```
+
+After this you'll want to delete the generated `__pycache__` directory:
+
+```sh
+rm -rf __pycache__
+```
+
+**OR** I just learned that it is possible to tell Python not to generate it in the first place with:
+
+```sh
+export PYTHONDONTWRITEBYTECODE=1
 ```
