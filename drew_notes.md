@@ -3,6 +3,22 @@
 Commands I used to create this repo initially:
 
 ```sh
+mkch jm_python
+git init
+touch README.md
+echo "# jm_python" >> README.md
+printf "\nA repo for some study code\n\n" >> README.md
+touch drew_notes.md
+touch first.py
+git status
+git add .
+git commit -m "created repo and initial files"
+gh repo create --source=. --public
+```
+
+And the full session with output:
+
+```sh
 [  7:20PM ]  [ jac494@hp-laptop:~/Projects ]
  $ mkch jm_python
 [  7:20PM ]  [ jac494@hp-laptop:~/Projects/jm_python ]
