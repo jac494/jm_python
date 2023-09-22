@@ -3,13 +3,16 @@
 Commands I used to create this repo initially:
 
 ```sh
-mkch jm_python
+# make the directory and initialize it with git
+mkch jm_python  # mkch is my own shell function to combine mkdir and cd
 git init
+# populate with some files and file content
 touch README.md
 echo "# jm_python" >> README.md
 printf "\nA repo for some study code\n\n" >> README.md
 touch drew_notes.md
 touch first.py
+# commit it all and push it to github
 git status
 git add .
 git commit -m "created repo and initial files"
