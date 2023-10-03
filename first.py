@@ -2,6 +2,8 @@ def site_to_ip(site_id: str) -> str:
     """given a site id, return the site net addr
     >>> site_to_ip("1234")
     '11.12.34.0'
+    >>> site_to_ip("5678")
+    "11.56.78.0"
     """
     net_octet_list = ["11", "", "", "0"]
     # replace this comment block with code to:
