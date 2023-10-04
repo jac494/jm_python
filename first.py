@@ -2,17 +2,14 @@ def site_to_ip(site_id: str) -> str:
     """given a site id, return the site net addr
     >>> site_to_ip("1234")
     '11.12.34.0'
+    >>> site_to_ip('5678')
+    '11.56.78.0'
     """
     net_octet_list = ["11", "", "", "0"]
-    # replace this comment block with code to:
-    # 1. split the 4-digit site id into equal parts, i.e. '1234' -> '12', '34'
-    # 2. store these in the blank locations in net_octet list
-    # if those two steps are done correctly, str.join() below will turn the
-    # array elements into the string representation of the ip address.
-    # Test in the python repl with:
-    # >>> import doctest
-    # >>> import first
-    # >>> doctest.testmod(first)
+    first_half = site_id[:2]
+    second_half = site_id[2:]
+    net_octet_list[1] = first_half
+    net_octet_list[2] = second_half
     return ".".join(net_octet_list)
 
 
