@@ -17,6 +17,13 @@ class TestSiteToIP(unittest.TestCase):
             self.assertEqual(site_to_ip(test_site), test_network_address)
 
     def test_4digit_site_with_leading_zeroes(self):
+        # hint for making this test case pass:
+        # if you cast a string like "000001" to an integer like this:
+        # int("000001") then the result will just be 1
+        # you can then use the str() function to cast the result back to a string
+        # for concatenation
+        # string_int = str(int("000000000001"))
+        # string_result == "1"  # true
         test_assertions = (("0001", "11.0.1.0"),)
         for test_site, test_network_address in test_assertions:
             self.assertEqual(site_to_ip(test_site), test_network_address)
